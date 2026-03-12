@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basketball Sim Prototype</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="game-canvas"></canvas>
+
+    <div id="menu-overlay" class="overlay visible">
+      <div class="menu-panel">
+        <h1>Basketball Sim</h1>
+        <p>AAA-style browser prototype using Three.js + Cannon-es</p>
+        <div class="menu-buttons">
+          <button data-mode="quick">Start Quick Game</button>
+          <button data-mode="practice">Practice Mode</button>
+          <button id="restart-btn">Restart Game</button>
+        </div>
+        <div class="controls-list">
+          <h2>Controls</h2>
+          <p>WASD Move • Shift Sprint • Space Shoot (hold + release)</p>
+          <p>E Pass • Q Crossover • F Steal • R Block • Mouse Camera</p>
+        </div>
+      </div>
+    </div>
+
+    <header id="top-hud" class="hud-panel">
+      <div class="score-block"><span>HOME</span><strong id="home-score">0</strong></div>
+      <div class="clock-block">
+        <strong id="game-timer">08:00</strong>
+        <small>GAME</small>
+      </div>
+      <div class="clock-block">
+        <strong id="shot-clock">24</strong>
+        <small>SHOT</small>
+      </div>
+      <div class="score-block"><span>AWAY</span><strong id="away-score">0</strong></div>
+    </header>
+
+    <footer id="bottom-hud" class="hud-panel">
+      <div class="bar-wrap">
+        <label>STAMINA</label>
+        <div class="bar"><div id="stamina-fill" class="fill stamina"></div></div>
+      </div>
+      <div class="bar-wrap">
+        <label>SHOT METER <span id="shot-feedback">Ready</span></label>
+        <div class="bar"><div id="shot-fill" class="fill shot"></div></div>
+      </div>
+      <div id="player-indicator">PLAYER 1</div>
+    </footer>
+  </div>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
